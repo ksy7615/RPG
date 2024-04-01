@@ -3,7 +3,7 @@ package rpg;
 import java.util.Random;
 
 public abstract class Unit {
-	private Random random;
+	public Random random;
 	
 	private String name;
 	public final int MAX_HP;
