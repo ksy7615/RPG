@@ -1,6 +1,9 @@
 package rpg;
 
 public class Warrior extends Unit {
+	private int hit;
+	private int slice;
+	
 	private int potion;
 	private final int MAX_MP;
 	private int mp;
@@ -14,12 +17,10 @@ public class Warrior extends Unit {
 
 	@Override
 	public void defaultAttack() {
-		
 	}
 
 	@Override
 	public void skill() {
-		// TODO Auto-generated method stub
 		
 	}
 
