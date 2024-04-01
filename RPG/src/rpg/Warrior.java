@@ -6,4 +6,16 @@ public class Warrior extends Unit {
 		super(name, hp, power, defence);
 	}
 
+	@Override
+	public void defaultAttack() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void skill() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
