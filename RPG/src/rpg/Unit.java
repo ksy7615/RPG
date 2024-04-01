@@ -6,13 +6,15 @@ public abstract class Unit {
 	private int hp;
 	private int power;
 	private int defence;
+	private int level;
 	
-	public Unit(String name, int hp, int power, int defence) {
+	public Unit(String name, int hp, int power, int defence, int level) {
 		this.name = name;
 		MAX_HP = hp;
 		this.hp = hp;
 		this.power = power;
 		this.defence = defence;
+		this.level = level;
 	}
 
 	public int getHp() {
