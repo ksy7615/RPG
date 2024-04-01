@@ -17,8 +17,12 @@ public abstract class Unit {
 		this.level = level;
 	}
 
+	public int getMAX_HP() {
+		return this.MAX_HP;
+	}
+
 	public int getHp() {
-		return hp;
+		return this.hp;
 	}
 
 	public void setHp(int hp) {
@@ -26,15 +30,31 @@ public abstract class Unit {
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	public int getPower() {
-		return power;
+		return this.power;
+	}
+	
+	public void setPower(int power) {
+		this.power = power;
 	}
 
 	public int getDefence() {
-		return defence;
+		return this.defence;
+	}
+	
+	public void setDefence(int defence) {
+		this.defence = defence;
+	}
+	
+	public int getLevel() {
+		return this.level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
 	}
 	
 	public abstract void defaultAttack();
