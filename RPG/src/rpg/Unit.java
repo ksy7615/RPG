@@ -77,4 +77,9 @@ public abstract class Unit {
 	
 	public abstract void skill();
 	
+	@Override
+	public String toString() {
+		return String.format("[%d/%d]", this.hp, MAX_HP);
+	}
+	
 }
