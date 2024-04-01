@@ -73,7 +73,7 @@ public abstract class Unit {
 		this.exp = exp;
 	}
 	
-	public abstract void defaultAttack();
+	public abstract void defaultAttack(Unit unit);
 	
 	public abstract void skill();
 	
