@@ -8,7 +8,7 @@ public abstract class Unit {
 	private String name;
 	public final int MAX_HP;
 	private int hp;
-	private int power;
+	public int power;
 	private int defence;
 	private int level;
 	private int exp;
