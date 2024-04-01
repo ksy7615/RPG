@@ -7,14 +7,16 @@ public abstract class Unit {
 	private int power;
 	private int defence;
 	private int level;
+	private int exp;
 	
-	public Unit(String name, int hp, int power, int defence, int level) {
+	public Unit(String name, int hp, int power, int defence, int level, int exp) {
 		this.name = name;
 		MAX_HP = hp;
 		this.hp = hp;
 		this.power = power;
 		this.defence = defence;
 		this.level = level;
+		this.exp = exp;
 	}
 
 	public int getMAX_HP() {
@@ -55,6 +57,14 @@ public abstract class Unit {
 
 	public void setLevel(int level) {
 		this.level = level;
+	}
+	
+	public int getExp() {
+		return this.exp;
+	}
+	
+	public void setExp(int exp) {
+		this.exp = exp;
 	}
 	
 	public abstract void defaultAttack();
