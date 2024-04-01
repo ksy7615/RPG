@@ -2,10 +2,14 @@ package rpg;
 
 public class Warrior extends Unit {
 	private int potion;
+	private final int MAX_MP;
+	private int mp;
 
-	public Warrior(String name, int hp, int power, int defence, int potion) {
-		super(name, hp, power, defence);
+	public Warrior(String name, int hp, int power, int defence, int level, int exp, int potion, int mp) {
+		super(name, hp, power, defence, level, exp);
 		this.potion = potion;
+		MAX_MP = mp;
+		this.mp = mp;
 	}
 
 	@Override
