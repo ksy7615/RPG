@@ -1,6 +1,10 @@
 package rpg;
 
+import java.util.Random;
+
 public abstract class Unit {
+	private Random random;
+	
 	private String name;
 	public final int MAX_HP;
 	private int hp;
@@ -17,6 +21,8 @@ public abstract class Unit {
 		this.defence = defence;
 		this.level = level;
 		this.exp = exp;
+		
+		random = new Random();
 	}
 
 	public int getMAX_HP() {
