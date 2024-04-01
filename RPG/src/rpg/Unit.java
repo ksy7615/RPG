@@ -14,5 +14,25 @@ public abstract class Unit {
 		this.power = power;
 		this.defence = defence;
 	}
+
+	public int getHp() {
+		return hp;
+	}
+
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public int getPower() {
+		return power;
+	}
+
+	public int getDefence() {
+		return defence;
+	}
 	
 }
