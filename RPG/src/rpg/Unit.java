@@ -35,4 +35,6 @@ public abstract class Unit {
 		return defence;
 	}
 	
+	public abstract void defaultAttack();
+	
 }
