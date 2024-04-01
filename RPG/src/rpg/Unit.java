@@ -37,4 +37,6 @@ public abstract class Unit {
 	
 	public abstract void defaultAttack();
 	
+	public abstract void skill();
+	
 }
