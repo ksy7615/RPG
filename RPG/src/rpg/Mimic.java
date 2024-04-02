@@ -38,6 +38,7 @@ public class Mimic extends MonsterUnit {
 		// 보물 상자라면 상자를 깐 플레이어에게 포션을 3개 줍니다.
 		else {
 			System.out.println("[보물상자]다!!!");
+			this.setDefence(0);
 			this.setHp(1);
 			
 			if(this.getHp() < 0)
