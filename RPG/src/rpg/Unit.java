@@ -86,10 +86,6 @@ public abstract class Unit {
 		this.exp = exp;
 	}
 	
-	public abstract void defaultAttack(Unit unit);
-	
-	public abstract void skill(Unit unit);
-	
 	@Override
 	public String toString() {
 		return String.format("[%d/%d]", this.hp, MAX_HP);
