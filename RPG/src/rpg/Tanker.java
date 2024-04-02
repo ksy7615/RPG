@@ -30,14 +30,14 @@ public class Tanker extends PlayerUnit {
 	public void skill(Unit monster) {
 		System.out.println(String.format("[%s]의 스킬 [도발]\n", super.getName()));
 		this.provoke = true;
-		
+
 		// 한 턴 방어력 증가 + 맞아주기
-		if(this.provoke) {
+		if (this.provoke) {
 			this.setDefence(this.getDefence() + 30);
 			System.out.println(String.format("[%s]의 방어력이 30 올라갔습니다.\n", super.getName()));
 			System.out.println(String.format("[현재 방어력] %d", this.getDefence()));
 		}
-		
+
 		// 다시 돌려주고
 		this.provoke = false;
 		// 때리는 건 몬스터 몫이니까 >> static 놓고 미루기
@@ -45,9 +45,15 @@ public class Tanker extends PlayerUnit {
 
 	@Override
 	public void recovery() {
-		// TODO Auto-generated method stub
-		
+		if (this.getPotion() > 0) {
+			setHp(MAX_HP);
+			setMp(MAX_MP);
+			this.setPotion(this.getPotion() - 1);
+			System.out.println(String.format("[%s] %s\n", super.getName(), this));
+			System.out.println("완전히 회복되었습니다!\n");
+		} else if (this.getPotion() == 0) {
+			System.err.println("텅 -\n");
+		}
 	}
-	
 
 }
