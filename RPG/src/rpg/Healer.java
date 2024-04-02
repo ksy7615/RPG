@@ -10,6 +10,7 @@ public class Healer extends PlayerUnit {
 
 	@Override
 	public void defaultAttack(Unit monster) {
+		System.out.println(String.format("[%s]의 기본 공격\n", this.getName()));
 		this.hit = random.nextInt(this.power);
 
 		if (this.hit == 0)
@@ -21,20 +22,19 @@ public class Healer extends PlayerUnit {
 		if (monster.getHp() <= 0) {
 			monster.setHp(0);
 		}
-		System.out.println(String.format("[%s]의 기본 공격\n", super.getName()));
 		System.out.println(String.format("[%s]에게 [%d]만큼의 데미지를 입혔다.\n", monster.getName(), this.hit));
 	}
 
 	// 다른 파티 플레이어 피 100씩 회복 해주기
 	@Override
 	public void skill(Unit player) {
-		System.out.println(String.format("[%s]의 스킬 [Pray]\n", super.getName()));
+		System.out.println(String.format("[%s]의 스킬 [Pray]\n", this.getName()));
 		this.pray = 100;
-		
+
 		player.setHp(player.getHp() + this.pray);
-		this.setMp(this.getMp()-50);
-		
-		System.out.println(String.format("[%s]가 기도를 올려 모두를 [%d]만큼 회복 시켰습니다!\n", super.getName(), this.pray));
+		this.setMp(this.getMp() - 50);
+
+		System.out.println(String.format("[%s]가 기도를 올려 모두를 [%d]만큼 회복 시켰습니다!\n", this.getName(), this.pray));
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class Healer extends PlayerUnit {
 			setHp(MAX_HP);
 			setMp(MAX_MP);
 			this.setPotion(this.getPotion() - 1);
-			System.out.println(String.format("[%s] %s\n", super.getName(), this));
+			System.out.println(String.format("[%s] %s\n", this.getName(), this));
 			System.out.println("완전히 회복되었습니다!\n");
 		} else if (this.getPotion() == 0) {
 			System.err.println("텅 -\n");
