@@ -49,7 +49,7 @@ public class Mimic extends MonsterUnit {
 
 	@Override
 	public void skill(Unit unit) {
-		
+		// 미믹은 스킬이 없습니다.
 	}
 
 }
