@@ -6,4 +6,7 @@ abstract class MosterUnit extends Unit {
 		super(name, hp, power, defence, level);
 	}
 	
+	public abstract void defaultAttack(Unit unit);
+
+	public abstract void skill(Unit unit);	
 }
