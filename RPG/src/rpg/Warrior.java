@@ -1,6 +1,6 @@
 package rpg;
 
-public class Warrior extends Unit {
+public class Warrior extends PlayerUnit {
 	private int hit;
 	private int slice;
 	
@@ -16,23 +16,20 @@ public class Warrior extends Unit {
 	}
 
 	@Override
-	public void defaultAttack(Unit monster) {
-		this.hit = random.nextInt(this.power);
+	public void defaultAttack(Unit unit) {
+		// TODO Auto-generated method stub
 		
-		if(this.hit == 0)
-			System.err.println("MISS");
-		
-		monster.setHp(monster.getHp() - this.hit);
-		
-		if(monster.getHp() <= 0)
-			monster.setHp(0);
-		
-		System.out.println(String.format("[%s]의 기본 공격", super.getName()));
-		System.out.println(String.format("[%s]에게 [%d]만큼의 데미지를 입혔다.", monster.getName()));
 	}
 
 	@Override
-	public void skill(Unit monster) {
+	public void skill(Unit unit) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void recovery() {
+		// TODO Auto-generated method stub
 		
 	}
 
