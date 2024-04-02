@@ -46,8 +46,15 @@ public class Wizard extends PlayerUnit {
 
 	@Override
 	public void recovery() {
-		// TODO Auto-generated method stub
-
+		if (this.getPotion() > 0) {
+			setHp(MAX_HP);
+			setMp(MAX_MP);
+			this.setPotion(this.getPotion() - 1);
+			System.out.println(String.format("[%s] %s\n", super.getName(), this));
+			System.out.println("완전히 회복되었습니다!\n");
+		} else if (this.getPotion() == 0) {
+			System.err.println("텅 -\n");
+		}
 	}
 
 }
