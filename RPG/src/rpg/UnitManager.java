@@ -8,10 +8,10 @@ public class UnitManager {
 
 	public UnitManager() {
 		// 1.체력 2.마나 3.공격력 4.방어력 5.레벨 6.경험치 7.포션
-		Warrior warrior = new Warrior("전사", 1, 1, 1, 1, 1, 1, 1);
-		Tanker tanker = new Tanker("탱커", 1, 1, 1, 1, 1, 1, 1);
-		Wizard wizard = new Wizard("마법사", 1, 1, 1, 1, 1, 1, 1);
-		Healer healer = new Healer("힐러", 1, 1, 1, 1, 1, 1, 1);
+		Warrior warrior = new Warrior("전사", 700, 300, 100, 50, 1, 0, 3);
+		Tanker tanker = new Tanker("탱커", 800, 200, 30, 80, 1, 0, 3);
+		Wizard wizard = new Wizard("마법사", 500, 500, 50, 30, 1, 0, 3);
+		Healer healer = new Healer("힐러", 500, 500, 30, 30, 1, 0, 3);
 		
 		playerList.add(warrior);
 		playerList.add(tanker);
@@ -23,8 +23,8 @@ public class UnitManager {
 		Mimic mimic = new Mimic("미믹", 1, 1, 1, 1);
 		Goblin goblin = new Goblin("고블린", 1, 1, 1, 1);
 		Orc orc = new Orc("오크", 1, 1, 1, 1);
-		Cerberus cerberus = new Cerberus("케르베로스", 1, 1, 1, 1, 1);
-		Hades hades = new Hades("하데스", 1, 1, 1, 1, 1);
+		Cerberus cerberus = new Cerberus("케르베로스", 7000, 1, 1, 1, 1);
+		Hades hades = new Hades("하데스", 10000, 1, 1, 1, 1);
 		
 		monsterList.add(slime);
 		monsterList.add(mimic);
