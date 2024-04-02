@@ -2,6 +2,7 @@ package rpg;
 
 public class Healer extends PlayerUnit {
 	private int hit;
+	private int pray;
 	private int potion;
 
 	public Healer(String name, int hp, int mp, int power, int defence, int level, int exp, int potion) {
@@ -27,9 +28,9 @@ public class Healer extends PlayerUnit {
 		System.out.println(String.format("[%s]에게 [%d]만큼의 데미지를 입혔다.\n", monster.getName(), this.hit));
 	}
 
+	// 힐러 스킬 다른 파티 플레이어들 모두 피 회복 해주기
 	@Override
 	public void skill(Unit monster) {
-		// TODO Auto-generated method stub
 		
 	}
 
