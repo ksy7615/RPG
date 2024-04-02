@@ -40,6 +40,8 @@ public class Wizard extends PlayerUnit {
 			monster.setHp(0);
 		}
 		
+		this.setMp(this.getMp() - 100);
+		
 		System.out.println(String.format("[%s]에게 [%d]만큼의 데미지를 입혔다.\n", monster.getName(), this.energy));
 		System.out.println(String.format("[%s]의 현재 HP %s\n", monster.getName(), monster));
 	}
