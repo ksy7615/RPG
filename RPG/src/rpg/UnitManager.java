@@ -11,6 +11,11 @@ public class UnitManager {
 		Tanker tanker = new Tanker("탱커", 1, 1, 1, 1, 1, 1, 1);
 		Wizard wizard = new Wizard("마법사", 1, 1, 1, 1, 1, 1, 1);
 		Healer healer = new Healer("힐러", 1, 1, 1, 1, 1, 1, 1);
+		
+		playerList.add(warrior);
+		playerList.add(tanker);
+		playerList.add(wizard);
+		playerList.add(healer);
 	}
 
 }
