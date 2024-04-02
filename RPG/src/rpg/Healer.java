@@ -2,9 +2,11 @@ package rpg;
 
 public class Healer extends PlayerUnit {
 	private int hit;
+	private int potion;
 
 	public Healer(String name, int hp, int mp, int power, int defence, int level, int exp, int potion) {
 		super(name, hp, mp, power, defence, level, exp);
+		this.potion = potion;
 	}
 
 	@Override
