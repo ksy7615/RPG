@@ -2,8 +2,8 @@ package rpg;
 
 abstract class PlayerUnit extends Unit {
 
-	public PlayerUnit(String name, int hp, int power, int defence, int level, int exp) {
-		super(name, hp, power, defence, level, exp);
+	public PlayerUnit(String name, int hp, int mp, int power, int defence, int level, int exp) {
+		super(name, hp, mp, power, defence, level, exp);
 	}
 
 	public abstract void defaultAttack(Unit unit);
