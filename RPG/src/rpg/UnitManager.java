@@ -5,6 +5,9 @@ import java.util.ArrayList;
 public class UnitManager {
 	private ArrayList<PlayerUnit> playerList = new ArrayList<>();
 	private ArrayList<MonsterUnit> monsterList = new ArrayList<>();
+	private String path = "rpg";
+	private String[] generalMonsters = {"Slime", "Mimic", "Goblin", "Orc"};
+	private String[] BossMonsters = {"Cerberus", "Hades"};
 	
 	public UnitManager() {
 		Warrior warrior = new Warrior("전사", 1, 1, 1, 1, 1, 1, 1);
@@ -17,5 +20,5 @@ public class UnitManager {
 		playerList.add(wizard);
 		playerList.add(healer);
 	}
-
+	
 }
