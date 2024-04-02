@@ -3,11 +3,9 @@ package rpg;
 public class Healer extends PlayerUnit {
 	private int hit;
 	private int pray;
-	private int potion;
 
 	public Healer(String name, int hp, int mp, int power, int defence, int level, int exp, int potion) {
-		super(name, hp, mp, power, defence, level, exp);
-		this.potion = potion;
+		super(name, hp, mp, power, defence, level, exp, potion);
 	}
 
 	@Override
@@ -41,13 +39,13 @@ public class Healer extends PlayerUnit {
 
 	@Override
 	public void recovery() {
-		if (this.potion > 0) {
+		if (this.getPotion() > 0) {
 			setHp(MAX_HP);
 			setMp(MAX_MP);
-			this.potion--;
+			this.setPotion(this.getPotion() - 1);
 			System.out.println(String.format("[%s] %s\n", super.getName(), this));
 			System.out.println("완전히 회복되었습니다!\n");
-		} else if (this.potion == 0) {
+		} else if (this.getPotion() == 0) {
 			System.err.println("텅 -\n");
 		}
 	}
