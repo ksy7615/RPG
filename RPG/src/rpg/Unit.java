@@ -8,28 +8,33 @@ public abstract class Unit {
 	private String name;
 	public final int MAX_HP;
 	private int hp;
+	public final int MAX_MP;
+	private int mp;
 	public int power;
 	private int defence;
 	private int level;
 	private int exp;
 	
-	// 몬스터 >> 몬스터는 경험치를 가질 수 없으므로 override
+	// 몬스터 >> 몬스터는 경험치를 가질 수 없고 마나 없이 확률로 스킬 사용(override)
 	public Unit(String name, int hp, int power, int defence, int level) {
 		this.name = name;
 		MAX_HP = hp;
 		this.hp = hp;
+		MAX_MP = 0;
 		this.power = power;
 		this.defence = defence;
 		this.level = level;
 		
 		random = new Random();
 	}
-	
+
 	// 플레이어용
-	public Unit(String name, int hp, int power, int defence, int level, int exp) {
+	public Unit(String name, int hp, int mp, int power, int defence, int level, int exp) {
 		this.name = name;
 		MAX_HP = hp;
 		this.hp = hp;
+		MAX_MP = mp;
+		this.mp = mp;
 		this.power = power;
 		this.defence = defence;
 		this.level = level;
@@ -48,6 +53,14 @@ public abstract class Unit {
 
 	public void setHp(int hp) {
 		this.hp = hp;
+	}
+	
+	public int getMp() {
+		return mp;
+	}
+
+	public void setMp(int mp) {
+		this.mp = mp;
 	}
 
 	public String getName() {
