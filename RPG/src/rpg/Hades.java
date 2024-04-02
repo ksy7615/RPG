@@ -1,9 +1,11 @@
 package rpg;
 
 public class Hades extends MonsterUnit implements BossMob {
+	private int shield;
 
-	public Hades(String name, int hp, int power, int defence, int level) {
+	public Hades(String name, int hp, int power, int defence, int level, int shield) {
 		super(name, hp, power, defence, level);
+		this.shield = shield;
 	}
 
 	@Override
