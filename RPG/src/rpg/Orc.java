@@ -9,7 +9,6 @@ public class Orc extends MonsterUnit {
 
 	@Override
 	public void attackPlayer(Unit player) {
-		System.out.println(String.format("[%s]이다!!!\n", this.getName()));
 		System.out.println(String.format("[%s]의 공격\n", this.getName()));
 		this.hit = random.nextInt(power) + 1;
 		
