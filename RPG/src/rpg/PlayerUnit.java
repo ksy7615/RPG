@@ -6,4 +6,8 @@ abstract class PlayerUnit extends Unit {
 		super(name, hp, power, defence, level, exp);
 	}
 
+	public abstract void defaultAttack(Unit unit);
+
+	public abstract void skill(Unit unit);
+
 }
