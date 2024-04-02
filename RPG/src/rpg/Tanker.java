@@ -2,7 +2,7 @@ package rpg;
 
 public class Tanker extends PlayerUnit {
 	private int hit;
-	private int shield;
+	public static boolean provoke;
 
 	public Tanker(String name, int hp, int mp, int power, int defence, int level, int exp, int potion) {
 		super(name, hp, mp, power, defence, level, exp, potion);
@@ -25,10 +25,22 @@ public class Tanker extends PlayerUnit {
 		System.out.println(String.format("[%s]에게 [%d]만큼의 데미지를 입혔다.\n", monster.getName(), this.hit));
 	}
 
+	// 탱커 스킬 > 자기가 다 맞기
 	@Override
-	public void skill(Unit unit) {
-		// TODO Auto-generated method stub
+	public void skill(Unit monster) {
+		System.out.println(String.format("[%s]의 스킬 [도발]\n", super.getName()));
+		this.provoke = true;
 		
+		// 한 턴 방어력 증가 + 맞아주기
+		if(this.provoke) {
+			this.setDefence(this.getDefence() + 30);
+			System.out.println(String.format("[%s]의 방어력이 30 올라갔습니다.\n", super.getName()));
+			System.out.println(String.format("[현재 방어력] %d", this.getDefence()));
+		}
+		
+		// 다시 돌려주고
+		this.provoke = false;
+		// 때리는 건 몬스터 몫이니까 >> static 놓고 미루기
 	}
 
 	@Override
