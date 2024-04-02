@@ -23,15 +23,20 @@ public class Healer extends PlayerUnit {
 		if (monster.getHp() <= 0) {
 			monster.setHp(0);
 		}
-
 		System.out.println(String.format("[%s]의 기본 공격\n", super.getName()));
 		System.out.println(String.format("[%s]에게 [%d]만큼의 데미지를 입혔다.\n", monster.getName(), this.hit));
 	}
 
-	// 힐러 스킬 다른 파티 플레이어들 모두 피 회복 해주기
+	// 다른 파티 플레이어 피 100씩 회복 해주기
 	@Override
-	public void skill(Unit monster) {
+	public void skill(Unit player) {
+		System.out.println(String.format("[%s]의 스킬 [Pray]\n", super.getName()));
+		this.pray = 100;
 		
+		player.setHp(player.getHp() + this.pray);
+		this.setMp(this.getMp()-50);
+		
+		System.out.println(String.format("[%s]가 기도를 올려 [%s]를 [%d]만큼 회복 시켰습니다!\n", super.getName(), player.getName(), this.pray));
 	}
 
 	@Override
