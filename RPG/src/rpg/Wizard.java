@@ -1,9 +1,11 @@
 package rpg;
 
 public class Wizard extends PlayerUnit {
+	private int hit;
+	private int energy;
 
-	public Wizard(String name, int hp, int mp, int power, int defence, int level, int exp) {
-		super(name, hp, mp, power, defence, level, exp);
+	public Wizard(String name, int hp, int mp, int power, int defence, int level, int exp, int potion) {
+		super(name, hp, mp, power, defence, level, exp, potion);
 	}
 
 	@Override
