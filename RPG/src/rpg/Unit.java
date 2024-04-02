@@ -13,6 +13,19 @@ public abstract class Unit {
 	private int level;
 	private int exp;
 	
+	// 몬스터 >> 몬스터는 경험치를 가질 수 없으므로 override
+	public Unit(String name, int hp, int power, int defence, int level) {
+		this.name = name;
+		MAX_HP = hp;
+		this.hp = hp;
+		this.power = power;
+		this.defence = defence;
+		this.level = level;
+		
+		random = new Random();
+	}
+	
+	// 플레이어용
 	public Unit(String name, int hp, int power, int defence, int level, int exp) {
 		this.name = name;
 		MAX_HP = hp;
@@ -75,7 +88,7 @@ public abstract class Unit {
 	
 	public abstract void defaultAttack(Unit unit);
 	
-	public abstract void skill();
+	public abstract void skill(Unit unit);
 	
 	@Override
 	public String toString() {
