@@ -34,7 +34,7 @@ public class Healer extends PlayerUnit {
 		player.setHp(player.getHp() + this.pray);
 		this.setMp(this.getMp()-50);
 		
-		System.out.println(String.format("[%s]가 기도를 올려 [%s]를 [%d]만큼 회복 시켰습니다!\n", super.getName(), player.getName(), this.pray));
+		System.out.println(String.format("[%s]가 기도를 올려 모두를 [%d]만큼 회복 시켰습니다!\n", super.getName(), this.pray));
 	}
 
 	@Override
