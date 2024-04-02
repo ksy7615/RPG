@@ -14,6 +14,7 @@ public abstract class Unit {
 	private int defence;
 	private int level;
 	private int exp;
+	private int potion;
 	
 	// 몬스터 >> 몬스터는 경험치를 가질 수 없고 마나 없이 확률로 스킬 사용(override)
 	public Unit(String name, int hp, int power, int defence, int level) {
@@ -29,7 +30,7 @@ public abstract class Unit {
 	}
 
 	// 플레이어용
-	public Unit(String name, int hp, int mp, int power, int defence, int level, int exp) {
+	public Unit(String name, int hp, int mp, int power, int defence, int level, int exp, int potion) {
 		this.name = name;
 		MAX_HP = hp;
 		this.hp = hp;
@@ -39,6 +40,7 @@ public abstract class Unit {
 		this.defence = defence;
 		this.level = level;
 		this.exp = exp;
+		this.potion = potion;
 		
 		random = new Random();
 	}
@@ -99,6 +101,14 @@ public abstract class Unit {
 		this.exp = exp;
 	}
 	
+	public int getPotion() {
+		return potion;
+	}
+
+	public void setPotion(int potion) {
+		this.potion = potion;
+	}
+
 	@Override
 	public String toString() {
 		return String.format("[%d/%d]", this.hp, MAX_HP);
