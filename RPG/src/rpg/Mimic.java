@@ -8,7 +8,7 @@ public class Mimic extends MonsterUnit {
 	}
 
 	@Override
-	public void defaultAttack(Unit player) {
+	public void attackPlayer(Unit player) {
 		// 50% 확률로 괴물일 수도 있지만 보물 상자일 수도 있음
 		int probability = random.nextInt(2);
 
@@ -45,11 +45,6 @@ public class Mimic extends MonsterUnit {
 			
 			player.setPotion(player.getPotion() + 3);
 		}
-	}
-
-	@Override
-	public void skill(Unit unit) {
-		// 미믹은 스킬이 없습니다.
 	}
 
 }
