@@ -60,20 +60,29 @@ public class StageBattle extends Stage {
 				}
 			}
 	}
-	
+
 	private void attackMonster(int index) {
 		MonsterUnit monster = monsterList.get(index);
-		
-		if(monster.getHp() == 0) {
+
+		if (monster.getHp() == 0) {
 			return;
 		}
-		
-		while(true) {
+
+		while (true) {
 			int idx = random.nextInt(playerList.size());
-			
-			if(playerList.get(idx).getHp() > 0) {
-				monster.attackPlayer(playerList.get(idx));
-				break;
+
+			if (monster instanceof BossMob) {
+				// 보스몹 확률로 스킬 사용하게 하는 메소드 설정이 제대로 안돼있으므로
+				// 우선 임의로 넣어둔 상태
+				if (playerList.get(idx).getHp() > 0) {
+					((BossMob) monster).skill(playerList.get(idx));
+					break;
+				}
+			} else {
+				if (playerList.get(idx).getHp() > 0) {
+					monster.attackPlayer(playerList.get(idx));
+					break;
+				}
 			}
 		}
 	}
