@@ -8,6 +8,14 @@ public class Cerberus extends MonsterUnit implements BossMob {
 		super("케르베로스", 7000, 200, 50, 50);
 		this.shield = shield;
 	}
+	
+	public int getShield() {
+		return this.shield;
+	}
+	
+	public void setShield(int shield) {
+		this.shield = shield;
+	}
 
 	@Override
 	public void attackPlayer(Unit player) {
