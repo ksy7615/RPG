@@ -11,4 +11,11 @@ abstract class PlayerUnit extends Unit {
 	public abstract void skill(Unit unit);
 	
 	public abstract void recovery();
+	
+	public String toString() {
+		String info = "";
+		info += this.getName() + "/" + this.getHp() + "/" + this.getMp() + "/" + this.power + "/" + this.getDefence() + "/" + this.getLevel() + "/" + this.getExp() + "/" + this.getPotion();
+		
+		return info;
+	}
 }
