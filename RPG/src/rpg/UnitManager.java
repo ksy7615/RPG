@@ -44,6 +44,20 @@ public class UnitManager {
 			Class<?> clazz = Class.forName(path + bossMonsters[0]);
 			Class<?>[] params = new Class<?>[] { int.class };
 
+			Object obj = clazz.getDeclaredConstructor(params).newInstance(1000);
+
+			MonsterUnit temp = (MonsterUnit) obj;
+			monsterList.add(temp);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void setHades() {
+		try {
+			Class<?> clazz = Class.forName(path + bossMonsters[1]);
+			Class<?>[] params = new Class<?>[] { int.class };
+
 			Object obj = clazz.getDeclaredConstructor(params).newInstance(5000);
 
 			MonsterUnit temp = (MonsterUnit) obj;
