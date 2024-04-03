@@ -4,8 +4,8 @@ public class Cerberus extends MonsterUnit implements BossMob {
 	private int shield;
 	private boolean isBurn;
 
-	public Cerberus(String name, int hp, int power, int defence, int level, int shield) {
-		super(name, hp, power, defence, level);
+	public Cerberus(int shield) {
+		super("케르베로스", 7000, 200, 50, 50);
 		this.shield = shield;
 	}
 
