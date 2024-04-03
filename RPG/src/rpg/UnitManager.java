@@ -24,7 +24,7 @@ public class UnitManager {
 		playerList.add(healer);
 	}
 
-	private void setGeneralMob(int size) {
+	public void setGeneralMob(int size) {
 		for (int i = 0; i < size; i++) {
 			int num = random.nextInt(generalMonsters.length);
 			try {
@@ -39,7 +39,7 @@ public class UnitManager {
 		}
 	}
 
-	private void setCerberus() {
+	public void setCerberus() {
 		try {
 			Class<?> clazz = Class.forName(path + bossMonsters[0]);
 			Class<?>[] params = new Class<?>[] { int.class };
@@ -53,7 +53,7 @@ public class UnitManager {
 		}
 	}
 	
-	private void setHades() {
+	public void setHades() {
 		try {
 			Class<?> clazz = Class.forName(path + bossMonsters[1]);
 			Class<?>[] params = new Class<?>[] { int.class };
