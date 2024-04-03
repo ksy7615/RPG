@@ -9,6 +9,9 @@ public class StageBattle extends Stage {
 	private ArrayList<MonsterUnit> monsterList = new ArrayList<>();
 	private UnitManager unitManager = new UnitManager();
 
+	private int deadPlayer;
+	private int deadMonster;
+
 	public StageBattle() {
 		unitManager.setGeneralMob(4);
 		unitManager.setCerberus();
@@ -44,7 +47,7 @@ public class StageBattle extends Stage {
 		if (select == 1)
 			while (true) {
 				int idx = random.nextInt(monsterList.size());
-
+				
 				if (monsterList.get(idx).getHp() > 0) {
 					player.defaultAttack(monsterList.get(idx));
 					break;
@@ -85,6 +88,31 @@ public class StageBattle extends Stage {
 				}
 			}
 		}
+	}
+
+	private void checkDead() {
+		int num = 0;
+		for (int i = 0; i < playerList.size(); i++) {
+			if (playerList.get(i).getHp() == 0) {
+				num += 1;
+			}
+		}
+		this.deadPlayer = playerList.size() - num;
+
+		num = 0;
+		for (int i = 0; i < monsterList.size(); i++) {
+			if (monsterList.get(i).getHp() == 0) {
+				num += 1;
+				// 임의로 준 경험치 값
+				playerList.get(i).setExp(50);
+
+				if (playerList.get(i).getExp() > 100) {
+					playerList.get(i).setLevel(playerList.get(i).getLevel() + 1);
+					playerList.get(i).setExp(playerList.get(i).getExp() - 100);
+				}
+			}
+		}
+		this.deadMonster = monsterList.size() - num;
 	}
 
 	@Override
