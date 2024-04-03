@@ -7,7 +7,7 @@ public class UnitManager {
 	private Random random = new Random();
 	public ArrayList<PlayerUnit> playerList = new ArrayList<>();
 	public ArrayList<MonsterUnit> monsterList = new ArrayList<>();
-	private String path = "rpg";
+	private String path = "rpg.";
 	private String[] generalMonsters = { "Slime", "Mimic", "Goblin", "Orc" };
 	private String[] bossMonsters = { "Cerberus", "Hades" };
 
