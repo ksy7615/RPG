@@ -108,10 +108,5 @@ public abstract class Unit {
 	public void setPotion(int potion) {
 		this.potion = potion;
 	}
-
-	@Override
-	public String toString() {
-		return String.format("[%d/%d]", this.hp, MAX_HP);
-	}
 	
 }
