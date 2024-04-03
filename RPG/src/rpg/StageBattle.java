@@ -40,7 +40,7 @@ public class StageBattle extends Stage {
 		}
 
 		System.out.println(String.format("===[%s]의 차례===", player.getName()));
-		System.out.println("=== [1]기본공격 [2]스킬 ===");
+		System.out.println("=== [1]기본공격 [2]스킬 [3]포션먹기 ===");
 		System.out.println(">> 원하는 행동을 선택하십쇼");
 		int select = Game.scanner.nextInt();
 
@@ -62,6 +62,8 @@ public class StageBattle extends Stage {
 					break;
 				}
 			}
+		else if(select == 3)
+			player.recovery();
 	}
 
 	private void attackMonster(int index) {
