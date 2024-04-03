@@ -4,9 +4,11 @@ public class StageLobby extends Stage {
 
 	@Override
 	public boolean update() {
-		System.out.println("===== LOBBY =====");
-		System.out.println("│[1] 전투  [2] 종료│");
-		System.out.println("=================");
+		System.out.println();
+		System.out.println("          𝓛𝓞𝓑𝓑𝓨          ");
+		System.out.println("╔══════════════════════╗");
+	    System.out.println("║ [1] 전투       [2] 종료 ║");
+	    System.out.println("╚══════════════════════╝");
 		
 		int select = Game.scanner.nextInt();
 		
