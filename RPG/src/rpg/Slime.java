@@ -3,8 +3,8 @@ package rpg;
 public class Slime extends MonsterUnit {
 	private int hit;
 
-	public Slime(String name, int hp, int power, int defence, int level) {
-		super(name, hp, power, defence, level);
+	public Slime() {
+		super("슬라임", 300, 30, 5, 1);
 	}
 
 	@Override
