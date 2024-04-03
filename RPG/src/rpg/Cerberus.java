@@ -19,6 +19,16 @@ public class Cerberus extends MonsterUnit implements BossMob {
 
 	@Override
 	public void attackPlayer(Unit player) {
+		int ultimate = random.nextInt(5);
+		
+		if(ultimate == 0) {
+			skill(player);
+		} else {
+			attack(player);
+		}
+	}
+	
+	private void attack(Unit player) {
 		System.out.println(String.format("[%s]의 공격\n", this.getName()));
 		int hit = random.nextInt(power) + 1;
 
