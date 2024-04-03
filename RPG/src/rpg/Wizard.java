@@ -12,10 +12,11 @@ public class Wizard extends PlayerUnit {
 	public void defaultAttack(Unit monster) {
 		this.hit = random.nextInt(this.power);
 		
+		this.hit = this.hit - monster.getDefence()/5;
+		
 		if (this.hit == 0)
 			System.err.println("MISS");
 
-		// 몬스터의 방어력 비례 피해량 수정 필요
 		monster.setHp(monster.getHp() - this.hit);
 
 		if (monster.getHp() <= 0) {
