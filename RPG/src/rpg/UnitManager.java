@@ -5,8 +5,8 @@ import java.util.Random;
 
 public class UnitManager {
 	private Random random = new Random();
-	private ArrayList<PlayerUnit> playerList = new ArrayList<>();
-	private ArrayList<MonsterUnit> monsterList = new ArrayList<>();
+	public ArrayList<PlayerUnit> playerList = new ArrayList<>();
+	public ArrayList<MonsterUnit> monsterList = new ArrayList<>();
 	private String path = "rpg";
 	private String[] generalMonsters = { "Slime", "Mimic", "Goblin", "Orc" };
 	private String[] bossMonsters = { "Cerberus", "Hades" };
