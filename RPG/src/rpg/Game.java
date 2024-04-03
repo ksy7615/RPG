@@ -9,37 +9,42 @@ public class Game {
 	Map<String, Stage> stageList = new HashMap<String, Stage>();
 	public static String nextStage = "";
 	private String curStage = "";
-	
+
 	public Game() {
 		stageList.put("BATTLE", new StageBattle());
 		stageList.put("LOBBY", new StageLobby());
-		
+
 		nextStage = "LOBBY";
 	}
-	
+
 	private boolean changeStage() {
-		if(curStage.equals(nextStage)) {
+		if (curStage.equals(nextStage)) {
 			return true;
 		}
-		
+
 		curStage = nextStage;
 		Stage stage = stageList.get(curStage);
-		
+
 		boolean isRun = true;
-		while(true) {
+		while (true) {
 			isRun = stage.update();
-			if(!isRun)
+			if (!isRun)
 				break;
 		}
-		
-		if(nextStage.equals("")) {
+
+		if (nextStage.equals("")) {
 			return false;
 		} else {
 			return true;
 		}
 	}
-	
+
 	public void run() {
-		changeStage();
+		System.out.println("╔══════════════════════╗");
+		System.out.println("║⚔️✨🛡️ 𝓡𝓟𝓖 𝓖𝓐𝓜𝓔  ⚔️✨🛡️║");
+		System.out.println("╚══════════════════════╝");
+		while (true) {
+			changeStage();
+		}
 	}
 }
