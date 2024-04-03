@@ -11,6 +11,8 @@ public class StageBattle extends Stage {
 
 	public StageBattle() {
 		unitManager.setGeneralMob(4);
+		unitManager.setCerberus();
+		unitManager.setHades();
 		playerList = unitManager.playerList;
 		monsterList = unitManager.monsterList;
 	}
