@@ -3,8 +3,8 @@ package rpg;
 public class Mimic extends MonsterUnit {
 	private int hit;
 
-	public Mimic(String name, int hp, int power, int defence, int level) {
-		super(name, hp, power, defence, level);
+	public Mimic() {
+		super("미믹", 400, 45, 10, 1);
 	}
 
 	@Override
