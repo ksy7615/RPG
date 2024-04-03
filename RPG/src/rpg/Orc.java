@@ -3,8 +3,8 @@ package rpg;
 public class Orc extends MonsterUnit {
 	private int hit;
 
-	public Orc(String name, int hp, int power, int defence, int level) {
-		super(name, hp, power, defence, level);
+	public Orc() {
+		super("오크", 1000, 70, 30, 1);
 	}
 
 	@Override
