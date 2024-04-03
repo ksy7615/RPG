@@ -1,8 +1,10 @@
 package rpg;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class UnitManager {
+	private Random random = new Random();
 	private ArrayList<PlayerUnit> playerList = new ArrayList<>();
 	private ArrayList<MonsterUnit> monsterList = new ArrayList<>();
 	private String path = "rpg";
@@ -22,4 +24,18 @@ public class UnitManager {
 		playerList.add(healer);
 	}
 	
+	private void setGeneralMob(int size) {
+		for(int i=0; i<size; i++) {
+			int num = random.nextInt(generalMonsters.length);
+			try {
+				Class<?> clazz = Class.forName(path + generalMonsters[num]);
+				Object obj = clazz.getDeclaredConstructor().newInstance();
+				
+				MonsterUnit temp = (MonsterUnit) obj;
+				monsterList.add(temp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
