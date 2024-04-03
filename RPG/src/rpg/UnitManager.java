@@ -5,6 +5,9 @@ import java.util.ArrayList;
 public class UnitManager {
 	private ArrayList<PlayerUnit> playerList = new ArrayList<>();
 	private ArrayList<MonsterUnit> monsterList = new ArrayList<>();
+	private String path = "rpg";
+	private String[] generalMonsters = {"Slime", "Mimic", "Goblin", "Orc"};
+	private String[] BossMonsters = {"Cerberus", "Hades"};
 
 	public UnitManager() {
 		// 1.체력 2.마나 3.공격력 4.방어력 5.레벨 6.경험치 7.포션
@@ -17,21 +20,6 @@ public class UnitManager {
 		playerList.add(tanker);
 		playerList.add(wizard);
 		playerList.add(healer);
-		
-		// 1.체력 2.공격력 3.방어력 4.레벨 (+5. 쉴드)
-		Slime slime = new Slime("슬라임", 300, 30, 5, 1);
-		Mimic mimic = new Mimic("미믹", 400, 45, 10, 1);
-		Goblin goblin = new Goblin("고블린", 800, 60, 20, 1);
-		Orc orc = new Orc("오크", 1000, 70, 30, 1);
-		Cerberus cerberus = new Cerberus("케르베로스", 7000, 200, 50, 50, 1000);
-		Hades hades = new Hades("하데스", 10000, 400, 100, 75, 5000);
-		
-		monsterList.add(slime);
-		monsterList.add(mimic);
-		monsterList.add(goblin);
-		monsterList.add(orc);
-		monsterList.add(cerberus);
-		monsterList.add(hades);
 	}
 	
 }
