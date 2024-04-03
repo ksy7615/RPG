@@ -8,6 +8,14 @@ public class Hades extends MonsterUnit implements BossMob {
 		this.shield = shield;
 	}
 
+	public int getShield() {
+		return shield;
+	}
+
+	public void setShield(int shield) {
+		this.shield = shield;
+	}
+
 	@Override
 	public void attackPlayer(Unit player) {
 		System.out.println(String.format("[%s]의 공격\n", this.getName()));
