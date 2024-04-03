@@ -27,7 +27,8 @@ public class Tanker extends PlayerUnit {
 		System.out.println(String.format("[%s]에게 [%d]만큼의 데미지를 입혔다.\n", monster.getName(), this.hit));
 	}
 	
-	private void defaultAttackBoss(Unit monster) {
+	@Override
+	public void defaultAttackBoss(Unit monster) {
 		System.out.println(String.format("[%s]의 기본 공격\n", super.getName()));
 		this.hit = random.nextInt(this.power);
 		
