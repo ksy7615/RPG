@@ -12,6 +12,8 @@ public class Healer extends PlayerUnit {
 	public void defaultAttack(Unit monster) {
 		System.out.println(String.format("[%s]의 기본 공격\n", this.getName()));
 		this.hit = random.nextInt(this.power);
+		
+		this.hit = this.hit - monster.getDefence()/5;
 
 		if (this.hit == 0)
 			System.err.println("MISS");
