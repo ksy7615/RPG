@@ -7,5 +7,13 @@ abstract class MonsterUnit extends Unit {
 	}
 	
 	public abstract void attackPlayer(Unit unit);
+	
+	@Override
+	public String toString() {
+		String info = "";
+		info += this.getName() + "/" + this.getHp() + "/" + this.power + "/" + this.getDefence() + "/" + this.getLevel();
+		
+		return info;
+	}
 
 }
