@@ -7,6 +7,8 @@ abstract class PlayerUnit extends Unit {
 	}
 
 	public abstract void defaultAttack(Unit unit);
+	
+	public abstract void defaultAttackBoss(Unit unit);
 
 	public abstract void skill(Unit unit);
 	
