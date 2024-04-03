@@ -3,8 +3,8 @@ package rpg;
 public class Goblin extends MonsterUnit {
 	private int hit;
 	
-	public Goblin(String name, int hp, int power, int defence, int level) {
-		super(name, hp, power, defence, level);
+	public Goblin() {
+		super("고블린", 800, 60, 20, 1);
 	}
 
 	@Override
