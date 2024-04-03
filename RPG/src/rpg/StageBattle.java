@@ -9,8 +9,8 @@ public class StageBattle extends Stage {
 	private ArrayList<MonsterUnit> monsterList = new ArrayList<>();
 	private UnitManager unitManager = new UnitManager();
 
-	private int deadPlayer;
-	private int deadMonster;
+	private int livePlayer;
+	private int liveMonster;
 
 	public StageBattle() {
 		unitManager.setGeneralMob(4);
@@ -47,7 +47,7 @@ public class StageBattle extends Stage {
 		if (select == 1)
 			while (true) {
 				int idx = random.nextInt(monsterList.size());
-				
+
 				if (monsterList.get(idx).getHp() > 0) {
 					player.defaultAttack(monsterList.get(idx));
 					break;
@@ -97,7 +97,7 @@ public class StageBattle extends Stage {
 				num += 1;
 			}
 		}
-		this.deadPlayer = playerList.size() - num;
+		this.livePlayer = playerList.size() - num;
 
 		num = 0;
 		for (int i = 0; i < monsterList.size(); i++) {
@@ -112,11 +112,44 @@ public class StageBattle extends Stage {
 				}
 			}
 		}
-		this.deadMonster = monsterList.size() - num;
+		this.liveMonster = monsterList.size() - num;
 	}
 
 	@Override
 	public boolean update() {
+		boolean isRun = true;
+		boolean turn = true;
+		int playerIndex = 0;
+		int monsterIndex = 0;
+
+		while (isRun) {
+			if (turn) {
+				printState();
+				if (playerIndex < playerList.size()) {
+					attackPlayer(playerIndex);
+
+					playerIndex += 1;
+				} else {
+					turn = !turn;
+					playerIndex = 0;
+				}
+			} else {
+				if (monsterIndex < monsterList.size()) {
+					attackMonster(monsterIndex);
+
+					monsterIndex += 1;
+				} else {
+					turn = !turn;
+					monsterIndex = 0;
+				}
+			}
+			checkDead();
+			
+			if(livePlayer <= 0 || liveMonster <= 0) {
+				break;
+			}
+		}
+		Game.nextStage = "LOBBY";
 		return false;
 	}
 
