@@ -11,6 +11,8 @@ public class Tanker extends PlayerUnit {
 	@Override
 	public void defaultAttack(Unit monster) {
 		this.hit = random.nextInt(this.power);
+		
+		this.hit = this.hit - monster.getDefence()/5;
 
 		if (this.hit == 0)
 			System.err.println("MISS");
